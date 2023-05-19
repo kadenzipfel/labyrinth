@@ -10,4 +10,9 @@ contract LabyrinthTest is Test {
     function setUp() public {
         labyrinth = new Labyrinth();
     }
+
+    function testTraverseNoWalls() public {
+        uint256 solution = 0xDDDDDDDDDDDDDDD;
+        assertTrue(labyrinth.verify(0, solution));
+    }
 }
