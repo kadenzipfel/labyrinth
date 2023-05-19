@@ -12,7 +12,7 @@ contract LabyrinthTest is Test {
     }
 
     function testTraverseNoWalls() public {
-        uint256 solution = 0xDDDDDDDDDDDDDDD;
+        uint256 solution = 0x777777777777777;
         assertTrue(labyrinth.verify(0, solution));
     }
 }
