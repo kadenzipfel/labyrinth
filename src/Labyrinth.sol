@@ -10,8 +10,8 @@ contract Labyrinth is IPuzzle {
     }
 
     /// @inheritdoc IPuzzle
-    function generate(address _seed) external returns (uint256) {
-        
+    function generate(address _seed) external view returns (uint256) {
+        return uint256(keccak256(abi.encode(_seed, block.number)));
     }
 
     /// @inheritdoc IPuzzle
