@@ -37,7 +37,7 @@ contract Labyrinth is IPuzzle {
                 pos += 0x10;
             }
 
-            if (_start >> pos == 1) return false;
+            if (_start >> pos & 0x1 == 0x1) return false;
             if (pos == 0xff) return true;
 
             unchecked {

@@ -16,12 +16,19 @@ contract LabyrinthTest is Test {
         assertTrue(labyrinth.verify(0, solution));
     }
 
-    function testTraverseWalls() public {
-        vm.roll(470);
-        uint256 seed = labyrinth.generate(address(0x3111327EdD38890C3fe564afd96b4C73e8101747));
+    // function testTraverseWalls() public {
+    //     vm.roll(470);
+    //     uint256 seed = labyrinth.generate(address(0x3111327EdD38890C3fe564afd96b4C73e8101747));
 
-        assertEq(seed, 0x2647b8817a2f4008e7af6648c7bf16a9253a42329c551415433090a569075505);
+    //     assertEq(seed, 0x2647b8817a2f4008e7af6648c7bf16a9253a42329c551415433090a569075505);
 
-        assertTrue(labyrinth.verify(seed, 0x7d75577777fddfd));
+    //     assertTrue(labyrinth.verify(seed, 0x7d75577777fddfd));
+    // }
+
+    /// forge-config: default.fuzz.runs = 100000
+    function testCannotTraverseWallsRandomSolution(uint256 solution) public {
+        try labyrinth.verify(0x2647b8817a2f4008e7af6648c7bf16a9253a42329c551415433090a569075505, solution) returns (bool success) {
+            assertFalse(success);
+        } catch {}
     }
 }
