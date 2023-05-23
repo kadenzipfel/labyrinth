@@ -20,4 +20,8 @@ contract LabyrinthHuffTest is Test {
     function testName() public {
         assertEq(keccak256(abi.encode(labyrinth.name())), keccak256(abi.encode("Labyrinth")));
     }
+
+    function testGenerate() public {
+        assertEq(labyrinth.generate(address(0x3111327EdD38890C3fe564afd96b4C73e8101747)), uint256(keccak256(abi.encode(address(0x3111327EdD38890C3fe564afd96b4C73e8101747), block.number))));
+    }
 }

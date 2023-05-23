@@ -22,7 +22,12 @@
 }
 
 #define macro GENERATE() = takes (0) returns (0) {
-    
+    0x04 calldataload           // [_seed]
+    push0 mstore                // []
+    number 0x20 mstore          // []
+    0x40 push0 sha3             // [_start]
+    push0 mstore                // []
+    0x20 push0 return           // []
 }
 
 #define macro VERIFY() = takes (0) returns (0) {
