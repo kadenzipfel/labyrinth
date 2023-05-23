@@ -2,6 +2,10 @@
 /// @author https://github.com/kadenzipfel
 /// @dev lost?
 
+/// ╦  ╔═╗╔╗ ╦ ╦╦═╗╦╔╗╔╔╦╗╦ ╦
+/// ║  ╠═╣╠╩╗╚╦╝╠╦╝║║║║ ║ ╠═╣
+/// ╩═╝╩ ╩╚═╝ ╩ ╩╚═╩╝╚╝ ╩ ╩ ╩
+
 /// @notice Returns the puzzle's name.
 #define function name() view returns (string memory)
 /// @notice Generates the puzzle's starting position based on a seed.
@@ -10,7 +14,11 @@
 #define function verify(uint256 _start, uint256 _solution) nonpayable returns (bool)
 
 #define macro NAME() = takes (0) returns (0) {
-
+    0x20 push0 mstore           // []
+    0x4c61627972696e7468        // ["Labyrinth"]
+    0x29 mstore                 // []
+    0x09 0x20 mstore            // []
+    0x60 push0 return           // []
 }
 
 #define macro GENERATE() = takes (0) returns (0) {
