@@ -26,8 +26,8 @@ contract LabyrinthTest is Test {
     }
 
     /// forge-config: default.fuzz.runs = 100000
-    function testCannotTraverseWallsRandomSolution(uint256 solution) public {
-        try labyrinth.verify(0x2647b8817a2f4008e7af6648c7bf16a9253a42329c551415433090a569075505, solution) returns (bool success) {
+    function testCannotTraverseWallsRandomSolution(uint16 blockNumber, uint256 solution) public {
+        try labyrinth.verify(uint256(keccak256(abi.encode(address(0x3111327EdD38890C3fe564afd96b4C73e8101747), blockNumber))), solution) returns (bool success) {
             assertFalse(success);
         } catch {}
     }
