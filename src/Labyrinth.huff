@@ -1,0 +1,10 @@
+/// @title Labyrinth
+/// @author https://github.com/kadenzipfel
+/// @dev lost?
+
+/// @notice Returns the name of the puzzle
+#define function name() view returns (string memory)
+/// @notice Verifies that a solution is valid for the puzzle
+#define function verify(uint256 _start, uint256 _solution) nonpayable returns (bool)
+/// @notice Generates the puzzle's starting position based on a seed.
+#define function generate(address _seed) view returns (uint256)
