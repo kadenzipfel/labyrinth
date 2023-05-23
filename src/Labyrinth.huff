@@ -2,9 +2,37 @@
 /// @author https://github.com/kadenzipfel
 /// @dev lost?
 
-/// @notice Returns the name of the puzzle
+/// @notice Returns the puzzle's name.
 #define function name() view returns (string memory)
-/// @notice Verifies that a solution is valid for the puzzle
-#define function verify(uint256 _start, uint256 _solution) nonpayable returns (bool)
 /// @notice Generates the puzzle's starting position based on a seed.
 #define function generate(address _seed) view returns (uint256)
+/// @notice Verifies that a solution is valid for the puzzle.
+#define function verify(uint256 _start, uint256 _solution) nonpayable returns (bool)
+
+#define macro NAME() = takes (0) returns (0) {
+
+}
+
+#define macro GENERATE() = takes (0) returns (0) {
+    
+}
+
+#define macro VERIFY() = takes (0) returns (0) {
+    
+}
+
+#define macro MAIN() = takes (0) returns (0) {
+    push0 calldataload 0xe0 shr
+    dup1 0x06fdde03 eq name jumpi
+    dup1 0x2fa61cd8 eq generate jumpi
+    dup1 0x41161b10 eq verify jumpi
+
+    push0 push0 revert
+
+    name: 
+        NAME()
+    generate: 
+        GENERATE()
+    verify: 
+        VERIFY()
+}
