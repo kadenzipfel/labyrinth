@@ -39,98 +39,98 @@
 
     stop stop stop stop stop stop stop stop stop stop stop stop stop stop stop stop
 
-    loop: dup3 loop_a jump 
-    loop_a: dup2 loop_b jump
-    loop_b: 0x02 loop_c jump
-    loop_c: mul loop_d jump
-    loop_d: shr loop_e jump
-    loop_e: 0x03 loop_f jump
-    loop_f: and loop_g jump
-    loop_g: dup1 loop_h jump
-    loop_h: iszero loop_i jump
-    loop_i: up jumpi loop_j jump
-    loop_j: dup1 loop_k jump
-    loop_k: 0x01 loop_l jump
-    loop_l: eq loop_m jump
-    loop_m: right jumpi loop_n jump
-    loop_n: dup1 loop_o jump
-    loop_o: 0x02 loop_p jump
-    loop_p: eq loop_q jump
-    loop_q: left jumpi loop_r jump
-    loop_r: dup1 loop_s jump
     loop_s: 0x03 loop_t jump
-    loop_t: eq loop_u jump
-    loop_u: down jumpi
-
-    up: 0x10 up_a jump
-    up_a: dup2 up_b jump
-    up_b: sub up_c jump
-    up_c: dup1 up_d jump
-    up_d: swap4 up_e jump
-    up_e: lt up_f jump
+    check_c: 0x01 check_d jump
+    check_h: eq check_i jump
+    down_b: add down_c jump
+    loop_b: 0x02 loop_c jump
+    success_c: 0x20 success_d jump
+    down_f: exit jumpi down_g jump
+    loop_o: 0x02 loop_p jump
+    exit: 0x20 exit_a jump
+    loop_e: 0x03 loop_f jump
     up_f: exit jumpi up_g jump
-    up_g: check jump
-
-    right: 0x10 right_a jump
-    right_a: dup4 right_b jump
-    right_b: 0x01 right_c jump
-    right_c: addmod right_d jump
-    right_d: iszero right_e jump
+    loop_g: dup1 loop_h jump
+    success_b: mstore success_c jump
+    loop_m: right jumpi loop_n jump
+    down_h: check jump
+    up: 0x10 up_a jump
+    check_e: exit jumpi check_f jump
+    exit_a: push0 exit_b jump
+    loop_d: shr loop_e jump
+    left_c: iszero left_d jump
+    down_c: dup1 down_d jump
     right_e: exit jumpi right_f jump
-    right_f: swap2 right_g jump
+    left_f: 0x01 left_g jump
+
+    check_l: add check_m jump
+    left_g: sub left_h jump
+
+
+    right_c: addmod right_d jump
+    check_f: dup3 check_g jump
+    right_b: 0x01 right_c jump
+    loop_c: mul loop_d jump
+    check_m: swap1 check_n jump
     right_g: 0x01 right_h jump
-    right_h: add right_i jump
+    right_a: dup4 right_b jump
+    loop_t: eq loop_u jump
+    right_d: iszero right_e jump
+    loop_i: up jumpi loop_j jump
+    loop_h: iszero loop_i jump
+    loop_u: down jumpi
     right_i: swap2 right_j jump
+    left: 0x10 left_a jump
+    check_g: 0xff check_h jump
+    success_a: push0 success_b jump
+    success_e: return
+    up_d: swap4 up_e jump
+    left_i: check jump
+    loop_f: and loop_g jump
+    loop_n: dup1 loop_o jump
+    left_d: exit jumpi left_e jump
+    down_e: lt down_f jump
+    loop_j: dup1 loop_k jump
+    right: 0x10 right_a jump
+    check_i: success jumpi check_j jump
+    loop_q: left jumpi loop_r jump
+
+    loop_p: eq loop_q jump
+    loop_a: dup2 loop_b jump
+    up_b: sub up_c jump
+    check_a: dup4 check_b jump
+    down_g: swap2 down_h jump
+    check_n: pop check_o jump
+    left_e: swap2 left_f jump
+    check_d: and check_e jump
+    check_o: loop jump
     right_j: check jump
 
-    left: 0x10 left_a jump
-    left_a: dup4 left_b jump
-    left_b: mod left_c jump
-    left_c: iszero left_d jump
-    left_d: exit jumpi left_e jump
-    left_e: swap2 left_f jump
-    left_f: 0x01 left_g jump
-    left_g: sub left_h jump
-    left_h: swap2 left_i jump
-    left_i: check jump
-
-    down: swap2 down_a jump
-    down_a: 0x10 down_b jump
-    down_b: add down_c jump
-    down_c: dup1 down_d jump
-    down_d: 0xff down_e jump
-    down_e: lt down_f jump
-    down_f: exit jumpi down_g jump
-    down_g: swap2 down_h jump
-    down_h: check jump
-
+    up_g: check jump
+    right_h: add right_i jump
     check: dup5 check_a jump
-    check_a: dup4 check_b jump
-    check_b: shr check_c jump
-    check_c: 0x01 check_d jump
-    check_d: and check_e jump
-    check_e: exit jumpi check_f jump
-    check_f: dup3 check_g jump
-    check_g: 0xff check_h jump
-    check_h: eq check_i jump
-    check_i: success jumpi check_j jump
-    check_j: swap1 check_k jump
-    check_k: 0x01 check_l jump
-    check_l: add check_m jump
-    check_m: swap1 check_n jump
-    check_n: pop check_o jump
-    check_o: loop jump
-
-    exit: 0x20 exit_a jump
-    exit_a: push0 exit_b jump
-    exit_b: return
-
-    success: 0x01 success_a jump
-    success_a: push0 success_b jump
-    success_b: mstore success_c jump
-    success_c: 0x20 success_d jump
+    loop: dup3 loop_a jump 
     success_d: push0 success_e jump
-    success_e: return
+    loop_k: 0x01 loop_l jump
+    up_a: dup2 up_b jump
+    check_k: 0x01 check_l jump
+    right_f: swap2 right_g jump
+    down_d: 0xff down_e jump
+    left_h: swap2 left_i jump
+    left_a: dup4 left_b jump
+
+    loop_r: dup1 loop_s jump
+    down: swap2 down_a jump
+
+    check_j: swap1 check_k jump
+    loop_l: eq loop_m jump
+    up_c: dup1 up_d jump
+    check_b: shr check_c jump
+    left_b: mod left_c jump
+    up_e: lt up_f jump
+    exit_b: return
+    success: 0x01 success_a jump
+    down_a: 0x10 down_b jump
 }
 
 #define macro MAIN() = takes (0) returns (0) {
