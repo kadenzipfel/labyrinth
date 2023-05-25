@@ -85,12 +85,14 @@
 
         check:
             dup5 dup4 shr       // [_start >> pos, dir, i, pos, _solution, _start]
-            0x01 and            // [_start >> pos & 1, dir, i, pos, _solution, _start]
-            iszero iszero       // [wall?, dir, i, pos, _solution, _start]
+            0x01 and            // [wall?, dir, i, pos, _solution, _start]
             exit jumpi          // [dir, i, pos, _solution, _start]
 
-            dup2 0xff eq        // [finish?, dir, i, pos, _solution, _start]
+            dup3 0xff eq        // [finish?, dir, i, pos, _solution, _start]
             success jumpi       // [dir, i, pos, _solution, _start]
+
+            swap1 0x01 add      // [i + 1, dir, pos, _solution, _start]
+            swap1 pop           // [i, pos, _solution, _start]
 
         loop jump
 
