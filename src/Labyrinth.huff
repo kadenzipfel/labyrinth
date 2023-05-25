@@ -39,7 +39,7 @@
 
     stop stop stop stop stop stop stop stop stop stop stop stop stop stop stop stop
 
-    loop_s: 0x03 00 jump
+    loop_s: 0x03 loop_t jump
     check_c: 0x01 check_d jump
     check_h: eq check_i jump
     down_b: add down_c jump
@@ -74,7 +74,7 @@
     check_m: swap1 check_n jump
     right_g: 0x01 right_h jump
     right_a: dup4 right_b jump
-    00: eq loop_u jump
+    loop_t: eq loop_u jump
     right_d: iszero right_e jump
     loop_i: up jumpi loop_j jump
     loop_h: iszero loop_i jump
@@ -131,8 +131,6 @@
     exit_b: return
     success: 0x01 success_a jump
     down_a: 0x10 down_b jump
-
-    // Relabel each jump label as a hexadecimal value starting at 00
 }
 
 #define macro MAIN() = takes (0) returns (0) {
