@@ -24,4 +24,9 @@ contract LabyrinthHuffTest is Test {
     function testGenerate() public {
         assertEq(labyrinth.generate(address(0x3111327EdD38890C3fe564afd96b4C73e8101747)), uint256(keccak256(abi.encode(address(0x3111327EdD38890C3fe564afd96b4C73e8101747), block.number))));
     }
+
+    function testTraverseNoWalls() public {
+        uint256 solution = 0x777777777777777;
+        assertTrue(labyrinth.verify(0, solution));
+    }
 }
