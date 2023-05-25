@@ -14,85 +14,85 @@
 #define function verify(uint256 _start, uint256 _solution) nonpayable returns (bool)
 
 #define macro NAME() = takes (0) returns (0) {
-    0x20 push0 mstore           // []
-    0x4c61627972696e7468        // ["Labyrinth"]
-    0x29 mstore                 // []
-    0x09 0x20 mstore            // []
-    0x60 push0 return           // []
+    0x20 push0 mstore           
+    0x4c61627972696e7468        
+    0x29 mstore                 
+    0x09 0x20 mstore            
+    0x60 push0 return           
 }
 
 #define macro GENERATE() = takes (0) returns (0) {
-    0x04 calldataload           // [_seed]
-    push0 mstore                // []
-    number 0x20 mstore          // []
-    0x40 push0 sha3             // [_start]
-    push0 mstore                // []
-    0x20 push0 return           // []
+    0x04 calldataload           
+    push0 mstore                
+    number 0x20 mstore          
+    0x40 push0 sha3             
+    push0 mstore                
+    0x20 push0 return           
 }
 
 #define macro VERIFY() = takes (0) returns (0) {
-    0x04 calldataload           // [_start]
-    0x24 calldataload           // [_solution, _start]
+    0x04 calldataload           
+    0x24 calldataload           
 
-    push0 push0                 // [i, pos, _solution, _start]
+    push0 push0                 
     loop:
-        dup3 dup2               // [i, _solution, i, pos, _solution, _start]
-        0x02 mul                // [i * 2, _solution, i, pos, _solution, _start]
-        shr 0x03 and            // [dir, i, pos, _solution, _start]
+        dup3 dup2               
+        0x02 mul                
+        shr 0x03 and            
 
-        dup1 iszero             // [dir == 0, dir, i, pos, _solution, _start]
-        up jumpi                // [dir, i, pos, _solution, _start]
+        dup1 iszero             
+        up jumpi                
 
-        dup1 0x01 eq            // [dir == 1, dir, i, pos, _solution, _start]
-        right jumpi             // [dir, i, pos, _solution, _start]
+        dup1 0x01 eq            
+        right jumpi             
 
-        dup1 0x02 eq            // [dir == 2, dir, i, pos, _solution, _start]
-        left jumpi              // [dir, i, pos, _solution, _start]
+        dup1 0x02 eq            
+        left jumpi              
 
-        dup1 0x03 eq            // [dir == 3, dir, i, pos, _solution, _start]
-        down jumpi              // [dir, i, pos, _solution, _start]
+        dup1 0x03 eq            
+        down jumpi              
 
         up:
-            0x10 dup2 sub       // [pos - 0x10, dir, i, pos, _solution, _start]
-            dup1 swap4 lt       // [boundary?, dir, i, pos, _solution, _start]
-            exit jumpi          // [dir, i, pos, _solution, _start]
-            check jump          // [dir, i, pos, _solution, _start]
+            0x10 dup2 sub       
+            dup1 swap4 lt       
+            exit jumpi          
+            check jump          
 
         right:
-            0x10 dup4 0x01      // [1, pos, 0x10, dir, i, pos, _solution, _start]
-            addmod iszero       // [boundary?, dir, i, pos, _solution, _start]
-            exit jumpi          // [dir, i, pos, _solution, _start]
+            0x10 dup4 0x01      
+            addmod iszero       
+            exit jumpi          
 
-            swap2 0x01 add      // [pos + 1, i, dir, _solution, _start]
-            swap2               // [dir, i, pos, _solution, _start]
-            check jump          // [dir, i, pos, _solution, _start]
+            swap2 0x01 add      
+            swap2               
+            check jump          
 
         left:
-            0x10 dup4 mod       // [pos % 0x10, dir, i, pos, _solution, _start]
-            iszero              // [boundary?, dir, i, pos, _solution, _start]
-            exit jumpi          // [dir, i, pos, _solution, _start]
+            0x10 dup4 mod       
+            iszero              
+            exit jumpi          
 
-            swap2 0x01 sub      // [pos - 1, i, dir, _solution, _start]
-            swap2               // [dir, i, pos, _solution, _start]
-            check jump          // [dir, i, pos, _solution, _start]
+            swap2 0x01 sub      
+            swap2               
+            check jump          
 
         down:
-            swap2 0x10 add      // [pos + 0x10, i, dir, _solution, _start]
-            dup1 0xff lt        // [boundary?, pos, i, dir, _solution, _start]
-            exit jumpi          // [pos, i, dir, _solution, _start]
-            swap2               // [dir, i, pos, _solution, _start]
-            check jump          // [dir, i, pos, _solution, _start]
+            swap2 0x10 add      
+            dup1 0xff lt        
+            exit jumpi          
+            swap2               
+            check jump          
 
         check:
-            dup5 dup4 shr       // [_start >> pos, dir, i, pos, _solution, _start]
-            0x01 and            // [wall?, dir, i, pos, _solution, _start]
-            exit jumpi          // [dir, i, pos, _solution, _start]
+            dup5 dup4 shr       
+            0x01 and            
+            exit jumpi          
 
-            dup3 0xff eq        // [finish?, dir, i, pos, _solution, _start]
-            success jumpi       // [dir, i, pos, _solution, _start]
+            dup3 0xff eq        
+            success jumpi       
 
-            swap1 0x01 add      // [i + 1, dir, pos, _solution, _start]
-            swap1 pop           // [i, pos, _solution, _start]
+            swap1 0x01 add      
+            swap1 pop           
 
         loop jump
 
