@@ -1,7 +1,3 @@
-/// @title Labyrinth
-/// @author https://github.com/kadenzipfel
-/// @dev lost?
-
 ///                  ╦  ╔═╗╔╗ ╦ ╦╦═╗╦╔╗╔╔╦╗╦ ╦
 ///                  ║  ╠═╣╠╩╗╚╦╝╠╦╝║║║║ ║ ╠═╣
 ///                  ╩═╝╩ ╩╚═╝ ╩ ╩╚═╩╝╚╝ ╩ ╩ ╩
@@ -32,6 +28,10 @@
 /// ██ am fo ,somsoc eht fo ,htaed dna efil fo lobmys a si tI   ██
 /// ██████████████████████████████████████████████████████████████
 
+/// @title Labyrinth
+/// @author https://github.com/kadenzipfel
+/// @dev lost?
+
 /// @notice Returns the puzzle's name.
 #define function name() view returns (string memory)
 /// @notice Generates the puzzle's starting position based on a seed.
@@ -39,6 +39,7 @@
 /// @notice Verifies that a solution is valid for the puzzle.
 #define function verify(uint256 _start, uint256 _solution) nonpayable returns (bool)
 
+/// name()
 #define macro NAME() = takes (0) returns (0) {
     0x20 push0 mstore           
     0x4c61627972696e7468        
@@ -47,6 +48,7 @@
     0x60 push0 return           
 }
 
+/// generate(address _seed)
 #define macro GENERATE() = takes (0) returns (0) {
     0x04 calldataload           
     push0 mstore                
@@ -56,6 +58,7 @@
     0x20 push0 return           
 }
 
+/// verify(uint256 _start, uint256 _solution)
 #define macro VERIFY() = takes (0) returns (0) {
     0x04 calldataload           
     0x24 calldataload           
