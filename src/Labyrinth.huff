@@ -65,6 +65,16 @@
     push0 push0                 
     a jump
 
+    /// Lost in the  annals of time, an enigmatic  labyrinth   waits, its character as  mutable as the
+    /// river's  course. Among its winding passages,  a rhythm beats, like  the steady  tick-tock of a
+    /// grand cosmic clock. Beneath the  labyrinth's complex facade, choices  become consequences, and
+    /// barriers  become opportunities. Yet, deep  within its belly, a treasure lies, protected by the
+    /// formidable Minotaur. Rules  in this mystical realm,  they  whisper, are a dance  of duality, a
+    /// journey into the twilight zone of decision-making. Into this realm of twos, you must step with
+    /// wisdom  and courage. Navigate wisely, for every choice,  every twist  and turn could bring you
+    /// closer to the heart of the  labyrinth. Triumph awaits those who can   decipher the labyrinth's
+    /// song and dance to its  cryptic tune.  Herein lies the ultimate challenge, only the cunning and
+    /// the                brave                  will                emerge               victorious.
     f3: 0x01  p1  jump  /******/  /******/  o:    y1  jumpi u1  /******/  jump w2:  /******/  /******/
     dup1   b  jump o2:  /******/  /******/  push0 q1  jump  w:  /******/  j  jumpi  /******/  /******/
     s2  jump    a1:     /******/  /******/   addmod   i1  jump  /******/  v1:    j  /******/  /******/
