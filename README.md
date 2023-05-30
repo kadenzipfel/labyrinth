@@ -6,10 +6,12 @@ The generation of this labyrinth is a meticulous process. Starting from the leas
 
 Journeying through this labyrinth is a quest in itself, granting the options to move up, down, left, or right. Each direction is but a 2-byte value, a humble command that guides your path:
 
+```
 b00: Up
 b01: Right
 b10: Left
 b11: Down
+```
 
 Now, behold the labyrinth's enigmatic paradox: frequently, there exists no path to victory. The `_start` seed, the hidden hand shaping the labyrinth's reality, is tied to the block number, undergoing metamorphosis with each emerging block. The gauntlet is thus thrown: to patiently seek and await the arrival of a block that harbors a valid solution.
 
