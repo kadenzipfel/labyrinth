@@ -1,0 +1,20 @@
+[package]
+name = "labyrinth-solvability"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+rand = "0.8.4"
+tiny-keccak = { version = "2.0.2", features = ["keccak"] }
+hex = "0.4.3"
+ethers = "2.0.4"
+
+[[bin]]
+name = "probability"
+path = "src/probability.rs"
+
+[[bin]]
+name = "solve"
+path = "src/solve.rs"
