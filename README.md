@@ -18,3 +18,9 @@ In crafting this labyrinth, my intent was twofold. Firstly, I sought to introduc
 Recognizing the labyrinth's demanding complexity, I saw fit to interweave subtle hints throughout. Although they won't unveil the mystery outright, they may lend a guiding hand, becoming clear as day once the puzzle is solved. In an ode to the labyrinth itself, the fundamental logic of the puzzle mirrors its pattern and even presents a path to a solution.
 
 This, fellow seekers, is the labyrinth—-a digital enigma, a philosophical meditation, a cryptic journey through complexity and creativity. And as we voyage through it, may we remember: the journey is the destination.
+
+### Creation Process
+
+The concept in mind, the first task was to assure the feasibility of locating a solvable block within a reasonable frame of time. To achieve this, I crafted a simple script [link to script]. This program constructed labyrinths, governed by a pseudo-random number generator, and endeavored to solve them using a straightforward depth-first search. This process was reiterated a million times, each instance an investigation into the number of solvable cases, with the aim of determining the probability.
+
+With this assurance that it was within the realm of possibility, I embarked on the journey of crafting a simple contract implementation [link to simple contract]. Progressing further, I refashioned it in Huff [link to initial huff contract], then delved into the process of obscuring the contract. Along this path, I wove in artistic elements and subtle hints, each inclusion a testament to the labyrinth's intricate design.
