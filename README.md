@@ -1,8 +1,8 @@
 # Labyrinth
 
-Envision a 16x16 grid, a sophisticated maze that beckons you to embark on a journey from the top left block (index 0) to the bottom right block (index 0xFF). The structure of this labyrinth, its intricate network of meandering paths and unyielding walls, springs from a uint256 _start parameter, a cryptic sequence of 256-bit values.
+Envision a 16x16 grid, a sophisticated maze that beckons you to embark on a journey from the top left block (index 0) to the bottom right block (index 0xFF). The structure of this labyrinth, its intricate network of meandering paths and unyielding walls, springs from a uint256 `_start` parameter, a cryptic sequence of 256-bit values.
 
-The generation of this labyrinth is a meticulous process. Starting from the least significant bit, each bit of the _start parameter is read. If a bit is 0, the corresponding square in the grid is marked as a path, inviting passage. Conversely, if a bit is 1, the corresponding square transforms into a wall, an impenetrable barrier. This pattern continues, each bit shaping the grid, until the _start parameter has been fully interpreted. The result is a unique labyrinth, its layout an embodiment of the _start cryptogram.
+The generation of this labyrinth is a meticulous process. Starting from the least significant bit, each bit of the `_start` parameter is read. If a bit is 0, the corresponding square in the grid is marked as a path, inviting passage. Conversely, if a bit is 1, the corresponding square transforms into a wall, an impenetrable barrier. This pattern continues, each bit shaping the grid, until the `_start` parameter has been fully interpreted. The result is a unique labyrinth, its layout an embodiment of the `_start` cryptogram.
 
 Journeying through this labyrinth is a quest in itself, granting the options to move up, down, left, or right. Each direction is but a 2-byte value, a humble command that guides your path:
 
