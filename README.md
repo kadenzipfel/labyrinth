@@ -36,3 +36,7 @@ To triumph over the labyrinth, one must delve into the heart of its logic, a fun
 A pivotal revelation in this journey is that often, there is no path to victory. This necessitates the crafting of a script, a digital oracle designed to predict the arrival of the next solvable block. [show image and link to script]
 
 The final step in this saga is submission—-a strategic play that requires one to anticipate the n-1 block and initiate with a favorable priority fee. Some challengers endeavored to employ flashbots protect, yet this strategy, though well-intentioned, seemed more an obstacle than a means to the end.
+
+### Conclusion
+
+In its final form, this puzzle transformed into something beyond a mere challenge—-it became a work of art. This project offered a riveting journey to the crossroads of logic and creativity, delicately obscuring the boundaries between the two. I hope that this endeavor might kindle a spark in others, inspiring them to embark on similar adventures. As for me, I eagerly await the prospect of weaving more such enchanting tapestries of art and technology in the future.
