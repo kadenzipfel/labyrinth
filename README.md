@@ -21,19 +21,23 @@ This, fellow seekers, is the labyrinth—-a digital enigma, a philosophical medi
 
 ### Creation Process
 
-The concept in mind, the first task was to assure the feasibility of locating a solvable block within a reasonable frame of time. To achieve this, I crafted a simple script [link to script]. This program constructed labyrinths, governed by a pseudo-random number generator, and endeavored to solve them using a straightforward depth-first search. This process was reiterated a million times, each instance an investigation into the number of solvable cases, with the aim of determining the probability.
+The concept in mind, the first task was to assure the feasibility of locating a solvable block within a reasonable frame of time. To achieve this, I crafted a [simple script](./rust/src/probability.rs). This program constructed labyrinths, governed by a pseudo-random number generator, and endeavored to solve them using a straightforward depth-first search. This process was reiterated a million times, each instance an investigation into the number of solvable cases, with the aim of determining the probability.
 
-With this assurance that it was within the realm of possibility, I embarked on the journey of crafting a simple contract implementation [link to simple contract]. Progressing further, I refashioned it in Huff [link to initial huff contract], then delved into the process of obscuring the contract. Along this path, I wove in artistic elements and subtle hints, each inclusion a testament to the labyrinth's intricate design.
+With this assurance that it was within the realm of possibility, I embarked on the journey of crafting a [simple contract implementation](./src/Labyrinth.sol). Progressing further, I [refashioned it in Huff](https://github.com/kadenzipfel/labyrinth/blob/1965c2c9d37838be4066fc38e9401cfb46a81723/src/Labyrinth.huff), then delved into the process of obscuring the [final contract](./src/Labyrinth.huff). Along this path, I wove in artistic elements and subtle hints, each inclusion a testament to the labyrinth's intricate design.
 
 ### Solution
 
 The task of deciphering this labyrinth puzzle unfurls in a series of deliberate steps: deobfuscation, comprehending the intrinsic logic, the search for a solution, and the act of submission.
 
-The first endeavor is to unravel the obscurity—-this may be done by manual disassembly or by navigating through a debugger, attentively tracing the execution flow and stripping away superfluous jump logic. Some seekers chose to harness the power of scripts to streamline this process. Among these, Philogy's script proved particularly insightful [link to philogy's script].
+The first endeavor is to unravel the obscurity—-this may be done by manual disassembly or by navigating through a debugger, attentively tracing the execution flow and stripping away superfluous jump logic. Some seekers chose to harness the power of scripts to streamline this process. Among these, [Philogy's script](https://gist.github.com/Philogy/21baf056c80db51b2b6217c563b4cd64#file-declutter-verify-py) proved particularly insightful.
 
-To triumph over the labyrinth, one must delve into the heart of its logic, a fundamental understanding of the start and end points, the navigation mechanisms, and a visual interpretation of its machinations [show gif of and link to p5js script].
+To triumph over the labyrinth, one must delve into the heart of its logic, a fundamental understanding of the start and end points, the navigation mechanisms, and a visual interpretation of its machinations.
 
-A pivotal revelation in this journey is that often, there is no path to victory. This necessitates the crafting of a script, a digital oracle designed to predict the arrival of the next solvable block. [show image and link to script]
+![labyrinth.gif](./labyrinth.gif)
+
+A pivotal revelation in this journey is that often, there is no path to victory. This necessitates the crafting of a [script](./rust/src/solve.rs), a digital oracle designed to predict the arrival of the next solvable block.
+
+![script.png](./script.png)
 
 The final step in this saga is submission—-a strategic play that requires one to anticipate the n-1 block and initiate with a favorable priority fee. Some challengers endeavored to employ flashbots protect, yet this strategy, though well-intentioned, seemed more an obstacle than a means to the end.
 
