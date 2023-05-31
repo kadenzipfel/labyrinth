@@ -25,26 +25,28 @@ This, fellow seekers, is the labyrinth—-a digital enigma, a philosophical medi
 
 ### Creation Process
 
-The concept in mind, the first task was to assure the feasibility of locating a solvable block within a reasonable frame of time. To achieve this, I crafted a [simple script](./rust/src/probability.rs). This program constructed labyrinths, governed by a pseudo-random number generator, and endeavored to solve them using a straightforward depth-first search. This process was reiterated a million times, each instance an investigation into the number of solvable cases, with the aim of determining the probability.
+I started off by wanting to make sure it was even possible to find a solution within a reasonable timeframe. To do this, I created a [simple script](./rust/src/probability.rs). This script builds labyrinths using a pseudo-random number generator and then tries to solve them with a simple depth-first search. I ran this a million times, checking how many labyrinths were solvable, to estimate the chances of finding a solution.
 
-With this assurance that it was within the realm of possibility, I embarked on the journey of crafting a [simple contract implementation](./src/Labyrinth.sol). Progressing further, I [refashioned it in Huff](https://github.com/kadenzipfel/labyrinth/blob/1965c2c9d37838be4066fc38e9401cfb46a81723/src/Labyrinth.huff), then delved into the process of obscuring the [final contract](./src/Labyrinth.huff). Along this path, I wove in artistic elements and subtle hints, each inclusion a testament to the labyrinth's intricate design.
+Once I confirmed this was doable, I started writing a [simple contract implementation](./src/Labyrinth.sol). After that, I [rewrote it in Huff]((https://github.com/kadenzipfel/labyrinth/blob/1965c2c9d37838be4066fc38e9401cfb46a81723/src/Labyrinth.huff)), and then worked on obfuscating the [final contract](./src/Labyrinth.huff) to make it harder to understand, while also arranging it in the shape of the puzzle itself. Throughout this process, I added artistic elements and small hints that reflected the intricate design of the labyrinth while creating an atmospheric mythological context.
+
+![structure.png](./structure.png)
 
 ### Solution
 
-The task of deciphering this labyrinth puzzle unfurls in a series of deliberate steps: deobfuscation, comprehending the intrinsic logic, the search for a solution, and the act of submission.
+Solving this labyrinth puzzle involves a few steps: unscrambling the contract, understanding how it works, finding a solution, and then timing the submission of the solution.
 
-The first endeavor is to unravel the obscurity—-this may be done by manual disassembly or by navigating through a debugger, attentively tracing the execution flow and stripping away superfluous jump logic. Some seekers chose to harness the power of scripts to streamline this process. Among these, [Philogy's script](https://gist.github.com/Philogy/21baf056c80db51b2b6217c563b4cd64#file-declutter-verify-py) proved particularly insightful.
+You can unscramble the contract manually or by using a debugger, tracing how it executes and removing any unnecessary steps. Some people made scripts to make this easier. Among these, [Philogy's script](https://gist.github.com/Philogy/21baf056c80db51b2b6217c563b4cd64#file-declutter-verify-py) seemed really useful.
 
-To triumph over the labyrinth, one must delve into the heart of its logic, a fundamental understanding of the start and end points, the navigation mechanisms, and a visual interpretation of its machinations.
+To beat the labyrinth, you need to understand how it works: where it starts and ends, how it navigates, and [how its logic works visually](https://editor.p5js.org/KadenZipfel/full/CCG0L_uWu).
 
 ![labyrinth.gif](./labyrinth.gif)
 
-A pivotal revelation in this journey is that often, there is no path to victory. This necessitates the crafting of a [script](./rust/src/solve.rs), a digital oracle designed to predict the arrival of the next solvable block.
+Often, there's no solution. In those cases, you need to write a [script](./rust/src/solve.rs) that can predict when the next solvable block will appear.
 
 ![script.png](./script.png)
 
-The final step in this saga is submission—-a strategic play that requires one to anticipate the n-1 block and initiate with a favorable priority fee. Some challengers endeavored to employ flashbots protect, yet this strategy, though well-intentioned, seemed more an obstacle than a means to the end.
+Finally, to submit your solution, you need to wait for the n-1 block and submit it with a high priority fee. Some people tried to use flashbots protect, but unfortunately that seemed to be more of a hindrance.
 
 ### Conclusion
 
-In its final form, this puzzle transformed into something beyond a mere challenge—-it became a work of art. This project offered a riveting journey to the crossroads of logic and creativity, delicately obscuring the boundaries between the two. I hope that this endeavor might kindle a spark in others, inspiring them to embark on similar adventures. As for me, I eagerly await the prospect of weaving more such enchanting tapestries of art and technology in the future.
+In the end, this puzzle became more than just a challenge - it turned into a piece of art. It was a fun way to explore the intersection of logic and creativity, and I hope it inspires others to take on similar projects. As for me, I can't wait to create more projects that blend art and technology in the future.
