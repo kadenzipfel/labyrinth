@@ -13,6 +13,8 @@ b10: Left
 b11: Down
 ```
 
+Regrettably, both the mechanisms for moving left and upward carry within them flaws that hinder their intended functions. However, fortune smiles upon us as our primary course requires us to journey primarily downwards and towards the right.
+
 Now, behold the labyrinth's enigmatic paradox: frequently, there exists no path to victory. The `_start` seed, the hidden hand shaping the labyrinth's reality, is tied to the block number, undergoing metamorphosis with each emerging block. The gauntlet is thus thrown: to patiently seek and await the arrival of a block that harbors a valid solution.
 
 In crafting this labyrinth, my intent was twofold. Firstly, I sought to introduce a unique twist to the narrative of the puzzle—-the impermanent nature of the solution added a touch of the sands of time. Secondly, I endeavored to infuse thematic elements, inspired by the rich mythology of labyrinths, to weave a captivating narrative around the puzzle.
